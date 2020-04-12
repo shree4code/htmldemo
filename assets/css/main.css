@@ -1,0 +1,33 @@
+body{
+    margin: 0;
+}
+.header{
+    background-color: darkseagreen; 
+    padding: 5px;
+}
+.header .logo {
+    width:49%; display:inline-block; vertical-align: middle;
+}
+.header .logo img{
+    width:20px; margin-right: 5px;
+}
+.header .menu {
+    width:49%; text-align: right; display: inline-block;
+}
+.header .menu a {
+    color: green; 
+    text-decoration: none;
+    margin-left: 10px;
+}
+.header .menu a:hover {
+    color: red;
+    text-decoration: underline;
+}
+.footer{
+    text-align: center;
+    background-color: deepskyblue;
+    padding: 5px;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+}

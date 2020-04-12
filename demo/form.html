@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Form</title>
+</head>
+<body>
+    <form action="form.html" id="form_registration" method="GET">
+        First Name: <input type="text" name="firstname" placeholder="Yor First Name"/>
+        Last Name: <input type="text" name="lastname" title="Your last name"/> <br/>
+        Age: <input type="number" name="age"/><br/>
+        Dob: <input type="date" name="dob"/><br/>
+        Password: <input type="password" name="password"/><br/>
+        Picture: <input type="file" name="avatar"/><br/>
+        Bio: <textarea rows="5" cols="20" name="bio"></textarea><br/>
+        Sex:
+        <input type="radio" name="sex" id="form_registration_sex_male" value="Male"/> <label for="form_registration_sex_male">Male</label>
+        <input type="radio" name="sex" id="form_registration_sex_female" value="Female"/> <label for="form_registration_sex_female">Female</label>
+        <input type="radio" name="sex" id="form_registration_sex_others" value="Others"/> <label for="form_registration_sex_others">Others</label>
+        <br/>
+        Department:
+        <select name="dept">
+            <option value="-1">Select Department</option>
+            <option value="Mech">Mech.</option>
+            <option value="civil">Civil</option>
+            <option value="it">IT</option>
+        </select><br/>
+        <input type="checkbox" id="form_registration_accepted" name="accepted" value="true"/> <label for="form_registration_accepted">Agree T&C.</label>
+        <br/>
+        <input type="submit" value="Save"/>
+        <input type="button" value="Cancel"/>
+        <input type="reset" value="reset"/>
+    </form>
+</body>
+</html>
