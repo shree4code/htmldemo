@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+</head>
+<body>
+
+    <center>
+        <div class="chatroom">
+            <div class="form">
+                <input type="text" id="message"  onkeypress="captureKeyEvent(event);"/>
+                <input type="button" value="Send" onclick="sendMessage();"/>
+            </div>
+            <div class="screen" id="screen">
+                
+            </div>
+        </div>
+    </center>
+    
+
+    <style type="text/css">
+        .chatroom{
+            width: 400px;
+            border: 1px solid #DDDDDD;
+        }
+        .chatroom .form input:first-child {
+            width: 344px;
+        }
+        .chatroom .screen .msg{
+            text-align: left;
+            padding: 5px;
+        }
+        .chatroom .screen .msg:nth-child(odd){
+            background-color: burlywood;
+        }
+        .chatroom .screen .msg:nth-child(even){
+            background-color:cadetblue;
+        }
+        .chatroom .screen .msg .date {
+            font-size: small;
+        }
+    </style>
+
+    <script type="text/javascript">
+        let createMessge=(username,message)=>{
+            let div=document.createElement("div");
+            div.className="msg";
+
+            let d=new Date();
+            let fmt=d.getDate()+"/"+(d.getMonth()+1)+"/"+(d.getYear()+1900)+" "+d.getHours()+":"+d.getMinutes()+":"+d.getSeconds();
+
+            div.innerHTML="<span class='date'>"+fmt+"</span><br/>"+"<b>"+username+":</b> "+message;
+
+            document.getElementById('screen').appendChild(div);
+        }
+        
+        let sendMessage=()=>{
+            let msg=document.getElementById('message').value;
+            let username="Shree";
+            createMessge(username,msg);
+            document.getElementById('message').value="";
+        }
+
+        let captureKeyEvent=(e)=>{
+            console.log(e.code);
+            if(e.code==="Enter" || e.code==="NumpadEnter")
+            {
+                sendMessage();
+            }
+        }
+    </script>
+</body>
+</html>
